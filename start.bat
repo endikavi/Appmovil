@@ -1,0 +1,3 @@
+cmd start
+npm start
+
