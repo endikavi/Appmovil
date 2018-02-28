@@ -16,6 +16,22 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+window.addEventListener("batterystatus", onBatteryStatus, false);
+
+function onBatteryStatus(status) {
+    console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
+} 
+
+document.getElementById("button").addEventListener("click",hola)
+
+function hola() {
+    
+    batterystatus();
+    console.log(status.level);
+    
+}
+
 var app = {
     // Application Constructor
     initialize: function() {
