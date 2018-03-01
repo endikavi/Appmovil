@@ -17,19 +17,22 @@
  * under the License.
  */
 
-window.addEventListener("batterystatus", onBatteryStatus, false);
+document.getElementById("vibrate").addEventListener("click",vibrate)
+document.getElementById("camara").addEventListener("click",camara)
+
+function vibrate() {
+    
+	console.log(navigator.vibrate([5000,2000,5000]));
+    
+}
 
 function onBatteryStatus(status) {
     console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
-} 
-
-document.getElementById("button").addEventListener("click",hola)
-
-function hola() {
-    
-    console.log("hola");
-    
+	alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
+	status = status;
 }
+
+
 
 var app = {
     // Application Constructor
@@ -43,6 +46,9 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+		window.addEventListener("batterystatus", onBatteryStatus, false);
+		console.log(navigator.vibrate);
+		console.log(navigator.camera);
     },
 
     // Update DOM on a Received Event

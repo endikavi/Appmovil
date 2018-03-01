@@ -124,6 +124,10 @@
         "source": "F:\\Appmovil\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxhdpi\\screen.png"
     },
     {
+        "merged": "F:\\Appmovil\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml_provider_paths.xml.flat",
+        "source": "F:\\Appmovil\\platforms\\android\\app\\src\\main\\res\\xml\\provider_paths.xml"
+    },
+    {
         "merged": "F:\\Appmovil\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_icon.png.flat",
         "source": "F:\\Appmovil\\platforms\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\icon.png"
     },
