@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/signin.css" rel="stylesheet">
+        <title>Login</title>
+        <script src="js/firebase.js"></script>
+    </head>
+    <body>
+<div class="cover text-center ">
+   <img class="mb-4" src="/img/iconologin.png" alt="icono de la aplicacion" width="72" height="72">
+      <h1 Style="display:block;" class="h3 mb-3 font-weight-normal" id="Titulo">Bienvenido a mi app</h1>
+   <button Style="display:none;" id="Reset" class="btn btn-lg btn-primary btn-block button-register" type="buttom" >Volver</button>
+   
+    <button Style="display:block;" id="Register" class="btn btn-lg btn-primary btn-block button-register" type="buttom" >Registrarte</button>
+    <button Style="display:block;" id="Google" class="btn btn-lg btn-primary btn-block button-register-google" type="buttom" >Usar cuenta Google</button>
+    <button Style="display:block;" id="Login" class="btn btn-lg btn-primary btn-block button-register-google" type="buttom" >Ya tengo cuenta</button>
+    
+    <form class="form-signin">
+      <label for="Email" class="sr-only">Email address</label>
+      <input type="email" Style="display:none;" name="e" id="Email" class="form-control" placeholder="Email address" required pattern='^[^@]+@[^@]+\.[^@]{2,3}$' minlength="8" maxlength="40" title="El email dede de ser correcto o no podras validar la cuenta." required autofocus>
+      <label for="Username" class="sr-only">Username</label>
+      <input type="text" Style="display:none;" name="u" id="Username" class="form-control" placeholder="Username" required pattern="[A-z0-9À-ž]{3,15}$" minlength="3" maxlength="15" title="Nombre con el que se identificara, de 3 a 15 letras." required> 
+      <label for="Password" class="sr-only">Password</label>
+      <input Style="display:none;" type="password" name="p" id="Password" class="form-control" placeholder="Password" required pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,40}" minlength="8" maxlength="40" title="La contraseña necesita de 8 y 40 caracteres y debe incluir minusculas,mayusculas y numeros." required>
+      <div class="checkbox mb-3">
+        <label Style="display:none;" id="Accept">
+          <input type="checkbox" value="true" required> Acepto las condiciones de uso
+        </label>
+      </div>    
+    </form>
+    <div class="box-button-register">
+    
+    <button Style="display:none;" id="Register-button" class="btn btn-lg btn-primary btn-block button-register" type="buttom" >Registrarte</button>
+    <button Style="display:none;" id="Login-button" class="btn btn-lg btn-primary btn-block button-login" type="buttom" >Entrar</button>
+    <button Style="display:none;" id="Go" class="btn btn-lg btn-primary btn-block button-go" type="buttom" >Ver datos</button>
+    <button Style="display:none;" id="Salir" class="btn btn-lg btn-primary btn-block button-logout" type="buttom" >Salir</button>
+    </div>
+     <div>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+</div>
+</div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/setfirebase.js"></script>
+        <script type="text/javascript" src="js/fireauth.js"></script>
+    </body>
+</html>

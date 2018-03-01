@@ -11,7 +11,6 @@ function vibrate() {
 function onBatteryStatus(status) {
     console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
 	alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
-	status = status;
 }
 
 function camara() {

@@ -1,11 +1,12 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "HelloCordova",
-  "short_name": "HelloCordova",
-  "version": "io.cordova.hellocordova",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "author": "Apache Cordova Team",
+  "name": "Mi app",
+  "short_name": "Mi app",
+  "version": "io.cordova.miapp",
+  "description": "Una app muy simple.",
+  "author": "Endikavi",
   "icons": [],
-  "start_url": "index.html"
+  "start_url": "index.html",
+  "theme_color": "#2196f3"
 }
