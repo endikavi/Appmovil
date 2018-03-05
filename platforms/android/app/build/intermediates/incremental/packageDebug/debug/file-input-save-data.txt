@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Mar 05 16:27:43 CET 2018
+#Mon Mar 05 17:55:51 CET 2018
 60.set=ANDROID_RESOURCE
 52.set=ASSET
 53.base=C\:\\Users\\FPE\\Documents\\Appmovil\\platforms\\android\\app\\build\\intermediates\\assets\\debug

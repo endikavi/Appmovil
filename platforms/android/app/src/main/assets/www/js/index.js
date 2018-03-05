@@ -6,7 +6,29 @@ document.getElementById("mensaje").addEventListener("click",mensaje);
 document.getElementById("geo").addEventListener("click",geo);
 document.getElementById("on").addEventListener("click",flashOn);
 document.getElementById("off").addEventListener("click",flashOff);
+document.getElementById("gallery").addEventListener("click",gallery);
 
+function gallery () {
+    
+    navigator.camera.getPicture(gallerySuccess, galleryFail, 
+    { quality: 50,destinationType: Camera.DestinationType.FILE_URI,
+    sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM });
+    
+}
+
+function gallerySuccess(imageURI) {
+    
+    var largeImage = document.getElementById ('imageFile');
+        largeImage.style.display = 'block';
+        largeImage.src = imageURI;
+    
+}
+
+function galleryFail() {
+    
+    console.log('fallo');
+    
+}
 
 function flashOn () {
     
@@ -86,10 +108,10 @@ function camara() {
 	
 }
 
-function cameraSuccess(data) {
+function cameraSuccess(entry) {
     
     var elem = document.getElementById('imageFile');
-    elem.src = data.toURL();
+    elem.src = entry;
 	console.log('foto tomada');
 	
 }
@@ -118,6 +140,7 @@ var app = {
 		console.log(navigator.camera);
         console.log(device.cordova);
         console.log(navigator.geolocation);
+        console.log(cordova.file);
         
     },
 
