@@ -1,28 +1,95 @@
 
-document.getElementById("vibrate").addEventListener("click",vibrate)
-document.getElementById("camara").addEventListener("click",camara)
+document.getElementById("vibrate").addEventListener("click",vibrate);
+document.getElementById("camara").addEventListener("click",camara);
+document.getElementById("info").addEventListener("click",mostrarInfo);
+document.getElementById("mensaje").addEventListener("click",mensaje);
+document.getElementById("geo").addEventListener("click",geo);
+document.getElementById("on").addEventListener("click",flashOn);
+document.getElementById("off").addEventListener("click",flashOff);
+
+
+function flashOn () {
+    
+    window.plugins.flashlight.switchOn()
+    
+}
+
+function flashOff ()
+{
+    window.plugins.flashlight.switchOff()
+}
+function geo() {
+    
+    navigator.geolocation.getCurrentPosition(geolocationSuccess,geolocationError);
+    
+}
+
+function geolocationSuccess (position){
+    
+    window.plugins.toast.showShortTop(
+              'Latitude: '          + position.coords.latitude          + '\n' +
+              'Longitude: '         + position.coords.longitude         + '\n' +
+              'Altitude: '          + position.coords.altitude          + '\n' +
+              'Accuracy: '          + position.coords.accuracy          + '\n' +
+              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+              'Heading: '           + position.coords.heading           + '\n' +
+              'Speed: '             + position.coords.speed             + '\n' +
+              'Timestamp: '         + position.timestamp                + '\n'
+    )
+    
+}
+
+function geolocationError (){
+    
+    console.log(navigator.vibrate(500));
+    window.plugins.toast.showShortTop('error al geolocalizar');
+    
+}
+
+function mostrarInfo() {
+    
+    alert(
+        
+        'Fabricante: ' + device.manufacturer + '\n' +
+        'Cordova: ' + device.cordova + '\n' +
+        'Modelo: ' + device.model + '\n' +
+        'Plataforma: ' + device.platform + '\n' +
+        'Numero unico: ' + device.uuid + '\n' +
+        'Version: ' + device.version + '\n' +
+        'Es emulacion: ' + device.isVirtual + '\n' +
+        'Serial: ' + device.serial 
+        
+         );
+    
+}
+
+function mensaje() {
+    
+    window.plugins.toast.showShortTop('hola mundo');
+    
+}
 
 function vibrate() {
     
-	console.log(navigator.vibrate([5000,2000,5000]));
+	console.log(navigator.vibrate(2000));
     
 }
 
 function onBatteryStatus(status) {
     console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
 	alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
-	status = status;
 }
 
 function camara() {
 	
-	navigator.camera.getPicture(cameraSuccess, cameraError);
+	navigator.camera.getPicture(cameraSuccess, cameraError,{ saveToPhotoAlbum:true, quality: 100 });
 	
 }
 
 function cameraSuccess(data) {
-	
-	alert('foto guardada en:' + data);
+    
+    var elem = document.getElementById('imageFile');
+    elem.src = data.toURL();
 	console.log('foto tomada');
 	
 }
@@ -45,10 +112,13 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+        
         this.receivedEvent('deviceready');
-		window.addEventListener("batterystatus", onBatteryStatus, false);
 		console.log(navigator.vibrate);
 		console.log(navigator.camera);
+        console.log(device.cordova);
+        console.log(navigator.geolocation);
+        
     },
 
     // Update DOM on a Received Event
