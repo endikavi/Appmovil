@@ -7,6 +7,87 @@ document.getElementById("geo").addEventListener("click",geo);
 document.getElementById("on").addEventListener("click",flashOn);
 document.getElementById("off").addEventListener("click",flashOff);
 document.getElementById("gallery").addEventListener("click",gallery);
+document.getElementById("vermapa").addEventListener("click",getMapLocation);
+
+var Latitude = undefined;
+var Longitude = undefined;
+
+function getMapLocation() {
+
+    navigator.geolocation.getCurrentPosition
+    (onMapSuccess, onMapError, { enableHighAccuracy: true });
+}
+
+// Success callback for get geo coordinates
+
+var onMapSuccess = function (position) {
+
+    Latitude = position.coords.latitude;
+    Longitude = position.coords.longitude;
+
+    getMap(Latitude, Longitude);
+
+}
+
+// Get map by using coordinates
+
+function getMap(latitude, longitude) {
+	
+	console.log('hola');
+
+    var mapOptions = {
+        center: new google.maps.LatLng(0, 0),
+        zoom: 1,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    map = new google.maps.Map
+    (document.getElementById("map"), mapOptions);
+
+
+    var latLong = new google.maps.LatLng(latitude, longitude);
+
+    var marker = new google.maps.Marker({
+        position: latLong
+    });
+
+    marker.setMap(map);
+    map.setZoom(15);
+    map.setCenter(marker.getPosition());
+}
+
+// Success callback for watching your changing position
+
+var onMapWatchSuccess = function (position) {
+
+    var updatedLatitude = position.coords.latitude;
+    var updatedLongitude = position.coords.longitude;
+
+    if (updatedLatitude != Latitude && updatedLongitude != Longitude) {
+
+        Latitude = updatedLatitude;
+        Longitude = updatedLongitude;
+
+        getMap(updatedLatitude, updatedLongitude);
+    }
+}
+
+// Error callback
+
+function onMapError(error) {
+    console.log('code: ' + error.code + '\n' +
+        'message: ' + error.message + '\n');
+}
+
+// Watch your changing position
+
+function watchMapPosition() {
+
+    return navigator.geolocation.watchPosition
+    (onMapWatchSuccess, onMapError, { enableHighAccuracy: true });
+}
+
+//////////////////////////////////////////////////////////////////
 
 function gallery () {
     
@@ -135,7 +216,7 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         
-        this.receivedEvent('deviceready');
+       // this.receivedEvent('deviceready');
 		console.log(navigator.vibrate);
 		console.log(navigator.camera);
         console.log(device.cordova);
@@ -145,7 +226,7 @@ var app = {
     },
 
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+   /* receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -154,7 +235,7 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    }*/
 };
 
 app.initialize();
