@@ -157,6 +157,4 @@ var app = {
     }
 };
 
-//probando la feature
-
 app.initialize();
