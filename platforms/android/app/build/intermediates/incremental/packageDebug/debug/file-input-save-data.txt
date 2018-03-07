@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Mar 07 00:49:02 CET 2018
+#Wed Mar 07 02:35:33 CET 2018
 60.set=ASSET
 52.set=ASSET
 53.base=F\:\\Appmovil\\platforms\\android\\app\\build\\intermediates\\assets\\debug

@@ -8,6 +8,60 @@ document.getElementById("on").addEventListener("click",flashOn);
 document.getElementById("off").addEventListener("click",flashOff);
 document.getElementById("gallery").addEventListener("click",gallery);
 document.getElementById("vermapa").addEventListener("click",getMapLocation);
+document.getElementById("verlog").addEventListener("click",readLog);
+document.getElementById("resetlog").addEventListener("click",resetLog);
+
+function startLog() {
+	
+		window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function(dir) {
+        	dir.getFile("log.txt", {create:true}, function(file) {
+            	logOb = file;
+				console.log('log working');
+				writeLog("App log started");
+        	});
+    	});
+	
+}
+
+function writeLog(str) {
+    if(!logOb) return;
+    var log = str + " [" + (new Date()) + "]\n";
+    console.log(log);
+    logOb.createWriter(function(fileWriter) {
+        
+        fileWriter.seek(fileWriter.length);
+        
+        var blob = new Blob([log], {type:'text/plain'});
+        fileWriter.write(blob);
+    });
+}
+
+function readLog() {
+	
+    logOb.file(function(file) {
+        var reader = new FileReader();
+
+        reader.onloadend = function(e) {
+            console.log(this.result);
+			alert(this.result);
+        };
+
+        reader.readAsText(file);
+    });
+
+}
+
+function resetLog() {
+	
+	logOb.remove(function(){
+                  startLog();
+              },function(error){
+                  startLog();
+              },function(){
+                  startLog();
+              });
+	
+}
 
 var Latitude = undefined;
 var Longitude = undefined;
@@ -113,13 +167,16 @@ function galleryFail() {
 
 function flashOn () {
     
+	writeLog("flash on");
     window.plugins.flashlight.switchOn()
     
 }
 
-function flashOff ()
-{
+function flashOff (){
+	
+	writeLog("flash off");
     window.plugins.flashlight.switchOff()
+	
 }
 function geo() {
     
@@ -209,33 +266,16 @@ var app = {
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
-
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        
-       // this.receivedEvent('deviceready');
+		
+        startLog();
 		console.log(navigator.vibrate);
 		console.log(navigator.camera);
         console.log(device.cordova);
         console.log(navigator.geolocation);
         console.log(cordova.file);
-        
+		
     },
-
-    // Update DOM on a Received Event
-   /* receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }*/
 };
 
 app.initialize();
