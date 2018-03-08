@@ -1,4 +1,4 @@
-
+/*
 document.getElementById("vibrate").addEventListener("click",vibrate);
 document.getElementById("camara").addEventListener("click",camara);
 document.getElementById("info").addEventListener("click",mostrarInfo);
@@ -9,7 +9,7 @@ document.getElementById("off").addEventListener("click",flashOff);
 document.getElementById("gallery").addEventListener("click",gallery);
 document.getElementById("vermapa").addEventListener("click",getMapLocation);
 document.getElementById("verlog").addEventListener("click",readLog);
-document.getElementById("resetlog").addEventListener("click",resetLog);
+document.getElementById("resetlog").addEventListener("click",resetLog);*/
 
 function startLog() {
 	

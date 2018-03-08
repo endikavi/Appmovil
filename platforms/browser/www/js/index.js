@@ -1,4 +1,4 @@
-
+/*
 document.getElementById("vibrate").addEventListener("click",vibrate);
 document.getElementById("camara").addEventListener("click",camara);
 document.getElementById("info").addEventListener("click",mostrarInfo);
@@ -6,17 +6,177 @@ document.getElementById("mensaje").addEventListener("click",mensaje);
 document.getElementById("geo").addEventListener("click",geo);
 document.getElementById("on").addEventListener("click",flashOn);
 document.getElementById("off").addEventListener("click",flashOff);
+document.getElementById("gallery").addEventListener("click",gallery);
+document.getElementById("vermapa").addEventListener("click",getMapLocation);
+document.getElementById("verlog").addEventListener("click",readLog);
+document.getElementById("resetlog").addEventListener("click",resetLog);*/
 
+function startLog() {
+	
+		window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function(dir) {
+        	dir.getFile("log.txt", {create:true}, function(file) {
+            	logOb = file;
+				console.log('log working');
+				writeLog("App log started");
+        	});
+    	});
+	
+}
+
+function writeLog(str) {
+    if(!logOb) return;
+    var log = str + " [" + (new Date()) + "]\n";
+    console.log(log);
+    logOb.createWriter(function(fileWriter) {
+        
+        fileWriter.seek(fileWriter.length);
+        
+        var blob = new Blob([log], {type:'text/plain'});
+        fileWriter.write(blob);
+    });
+}
+
+function readLog() {
+	
+    logOb.file(function(file) {
+        var reader = new FileReader();
+
+        reader.onloadend = function(e) {
+            console.log(this.result);
+			alert(this.result);
+        };
+
+        reader.readAsText(file);
+    });
+
+}
+
+function resetLog() {
+	
+	logOb.remove(function(){
+                  startLog();
+              },function(error){
+                  startLog();
+              },function(){
+                  startLog();
+              });
+	
+}
+
+var Latitude = undefined;
+var Longitude = undefined;
+
+function getMapLocation() {
+
+    navigator.geolocation.getCurrentPosition
+    (onMapSuccess, onMapError, { enableHighAccuracy: true });
+}
+
+// Success callback for get geo coordinates
+
+var onMapSuccess = function (position) {
+
+    Latitude = position.coords.latitude;
+    Longitude = position.coords.longitude;
+
+    getMap(Latitude, Longitude);
+
+}
+
+// Get map by using coordinates
+
+function getMap(latitude, longitude) {
+	
+	console.log('hola');
+
+    var mapOptions = {
+        center: new google.maps.LatLng(0, 0),
+        zoom: 1,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    map = new google.maps.Map
+    (document.getElementById("map"), mapOptions);
+
+
+    var latLong = new google.maps.LatLng(latitude, longitude);
+
+    var marker = new google.maps.Marker({
+        position: latLong
+    });
+
+    marker.setMap(map);
+    map.setZoom(15);
+    map.setCenter(marker.getPosition());
+}
+
+// Success callback for watching your changing position
+
+var onMapWatchSuccess = function (position) {
+
+    var updatedLatitude = position.coords.latitude;
+    var updatedLongitude = position.coords.longitude;
+
+    if (updatedLatitude != Latitude && updatedLongitude != Longitude) {
+
+        Latitude = updatedLatitude;
+        Longitude = updatedLongitude;
+
+        getMap(updatedLatitude, updatedLongitude);
+    }
+}
+
+// Error callback
+
+function onMapError(error) {
+    console.log('code: ' + error.code + '\n' +
+        'message: ' + error.message + '\n');
+}
+
+// Watch your changing position
+
+function watchMapPosition() {
+
+    return navigator.geolocation.watchPosition
+    (onMapWatchSuccess, onMapError, { enableHighAccuracy: true });
+}
+
+//////////////////////////////////////////////////////////////////
+
+function gallery () {
+    
+    navigator.camera.getPicture(gallerySuccess, galleryFail, 
+    { quality: 50,destinationType: Camera.DestinationType.FILE_URI,
+    sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM });
+    
+}
+
+function gallerySuccess(imageURI) {
+    
+    var largeImage = document.getElementById ('imageFile');
+        largeImage.style.display = 'block';
+        largeImage.src = imageURI;
+    
+}
+
+function galleryFail() {
+    
+    console.log('fallo');
+    
+}
 
 function flashOn () {
     
+	writeLog("flash on");
     window.plugins.flashlight.switchOn()
     
 }
 
-function flashOff ()
-{
+function flashOff (){
+	
+	writeLog("flash off");
     window.plugins.flashlight.switchOff()
+	
 }
 function geo() {
     
@@ -86,9 +246,10 @@ function camara() {
 	
 }
 
-function cameraSuccess(data) {
-	
-	alert('foto guardada en:' + data);
+function cameraSuccess(entry) {
+    
+    var elem = document.getElementById('imageFile');
+    elem.src = entry;
 	console.log('foto tomada');
 	
 }
@@ -105,32 +266,16 @@ var app = {
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
-
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        
-        this.receivedEvent('deviceready');
+		
+        startLog();
 		console.log(navigator.vibrate);
 		console.log(navigator.camera);
         console.log(device.cordova);
         console.log(navigator.geolocation);
-        
+        console.log(cordova.file);
+		
     },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
 };
 
 app.initialize();

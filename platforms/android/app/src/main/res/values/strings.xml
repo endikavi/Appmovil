@@ -3,4 +3,7 @@
     <string name="app_name">Mi app</string>
     <string name="launcher_name">@string/app_name</string>
     <string name="activity_name">@string/launcher_name</string>
+    
+    <string name="google_app_id">1:1014982577939:android:cd51991e707b4453</string>
+    <string name="google_api_key">AIzaSyDgifhVH1cbzwYME0in5Dag6w82s79BuN0</string>
 </resources>

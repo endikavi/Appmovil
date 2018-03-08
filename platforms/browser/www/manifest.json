@@ -7,6 +7,5 @@
   "description": "Una app muy simple.",
   "author": "Endikavi",
   "icons": [],
-  "start_url": "index.html",
-  "theme_color": "#2196f3"
+  "start_url": "index.html"
 }

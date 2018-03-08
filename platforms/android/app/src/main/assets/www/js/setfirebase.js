@@ -1,4 +1,7 @@
  // Initialize Firebase
+
+var firebase = require("firebase");
+
   const fireconfig = {
     apiKey: "AIzaSyAUWRPpLunFjkfgWQ-VOa-rxYBd6hXNvBI",
     authDomain: "movil-app-endika.firebaseapp.com",

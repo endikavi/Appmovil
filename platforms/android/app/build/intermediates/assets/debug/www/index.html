@@ -1,138 +1,54 @@
+<!DOCTYPE html>
 <html>
-
-<head>
-    <!-- Required meta tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Color theme for statusbar -->
-    <meta name="theme-color" content="#2196f3">
-    <!-- Your app title -->
-    <title>Demo</title>
-    <!-- Path to Framework7 Library CSS -->
-    <link rel="stylesheet" href="css/framework7.min.css">
-    <!-- Path to material-icons/framework7-icons Library CSS -->
-    <link rel="stylesheet" href="css/framework7.material.min.css">
-    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
-    <link rel="stylesheet" type="text/css" href="css/framework7-icons.css">
-    <!-- Path to google-fonts Library  -->
-    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/my-app.css">
-</head>
-
-<body class="color-theme-blue">
-    <!-- app root -->
-    <!-- login -->
-    <div id="app">
-        <div class="page">
-            <div class="toolbar tabbar toolbar-bottom-md">
-                <div class="toolbar-inner">
-                    <a href="#tab-1" class="tab-link tab-link-active"><i class="material-icons">add_a_photo</i></a>
-                    <a href="#tab-2" class="tab-link"><i class="material-icons">face</i></a>
-                    <a href="#tab-3" class="tab-link"><i class="material-icons">build</i></a>
-                    <a href="#tab-4" class="tab-link"><i class="material-icons">touch_app</i></a>
-                </div>
-            </div>
-            <div class="tabs-animated-wrap">
-                <div class="tabs">
-                    <div id="tab-1" class="page-content tab tab-active">
-                        <!-- tab-1 content -->
-                        <div id="app">
-                            <div class="view view-main view-init">
-                                <div class="page">
-                                   <div class="page-content">
-                                    <div class="navbar view view-main">
-                                        <div class="navbar-inner sliding ">
-                                            <div class="title">TAB 1</div>
-                                        </div>
-                                       </div> 
-                                       
-                                       
-                                        <button class="button button-raised" id="vibrate">vibrar</button> 
-                                       
-                                       <button class="button button-raised" id="info">información</button> 
-                                       
-                                       <button class="button button-raised" id="mensaje">mensaje</button> 
-                                       
-                                       <button class="button button-raised" id="geo">geolocalización</button> 
-                                       
-                                       <button class="button button-raised" id="on">Flash  on</button> 
-                                       
-                                       <button class="button button-raised" id="off">Flash off</button>
-									   
-									   <button class="button button-raised" id="verlog">Ver Log</button> 
-									   
-									   <button class="button button-raised" id="resetlog">Borrar log</button> 
-                                       
-                                       
-                                    </div>
-                                </div>
-                            </div>                      
-                        </div>
-                    </div>
-                    <div id="tab-2" class="page-content tab">
-                        <!-- tab-1 content -->
-                        <div class="page-content">
-                            <div class="navbar view view-main">
-                                <div class="navbar-inner sliding">
-                                    <div class="title">TAB 2</div>
-                                </div>
-                            </div>
-                            
-                            <img Style='width: 350px;display: block;margin: auto;' id='imageFile'>
-							
-							<button class="button button-raised" id="camara">camara</button> 
-                            
-                            <button class="button button-raised" id="gallery">galeria</button> 
-                            
-                        </div>          
-                    </div>
-                    <div id="tab-3" class="page-content tab">
-                        <!-- tab-3 content -->
-						<div class="page-content" id="map">
-                        <div class="navbar view view-main">
-                            <div class="navbar-inner sliding">
-                                <div class="title">TAB 3</div>
-                            </div>
-                        </div>
-							
-							
-						
-							
-						<button class="button button-raised" id="vermapa">ver mapa</button> 
-						
-							
-						</div>
-                    </div>
-                    <div id="tab-4" class="page-content tab">
-                        <!-- tab-1 content -->
-                        <div class="navbar view view-main">
-                            <div class="navbar-inner sliding">
-                                <div class="title">TAB 4</div>
-                            </div>
-                        </div>
-						
-						<canvas id="game" width="360" height="400"></canvas>
-						
-						<div class="fab fab-left-bottom color-orange fab-opened"><a href="#" class=""><i class="icon f7-icons ios-only">add</i><i class="icon f7-icons ios-only">close</i></a>
-<div class="fab-buttons fab-buttons-right"><a id="up">1</a><button id="down">2</button><a href="">3</a><a href="">4</a></div>
-</div>
-						
-                    </div>
-                    </div>
-                </div>
-            </div>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/signin.css" rel="stylesheet">
+        <title>Login</title>
+    </head>
+    <body>
+<div class="cover text-center ">
+   <img class="mb-4" src="img/iconologin.png" alt="icono de la aplicacion" width="72" height="72">
+      <h1 Style="display:block;" class="h3 mb-3 font-weight-normal" id="Titulo">Bienvenido a mi app</h1>
+   <button Style="display:none;" id="Reset" class="btn btn-lg btn-primary btn-block button-register" type="buttom" >Volver</button>
+   
+    <button Style="display:block;" id="Register" class="btn btn-lg btn-primary btn-block button-register" type="buttom" >Registrarte</button>
+    <button Style="display:block;" id="Google" class="btn btn-lg btn-primary btn-block button-register-google" type="buttom" >Usar cuenta Google</button>
+    <button Style="display:block;" id="Login" class="btn btn-lg btn-primary btn-block button-register-google" type="buttom" >Ya tengo cuenta</button>
+    
+    <form class="form-signin">
+      <label for="Email" class="sr-only">Email address</label>
+      <input type="email" Style="display:none;" name="e" id="Email" class="form-control" placeholder="Email address" required pattern='^[^@]+@[^@]+\.[^@]{2,3}$' minlength="8" maxlength="40" title="El email dede de ser correcto o no podras validar la cuenta." required autofocus>
+      <label for="Username" class="sr-only">Username</label>
+      <input type="text" Style="display:none;" name="u" id="Username" class="form-control" placeholder="Username" required pattern="[A-z0-9À-ž]{3,15}$" minlength="3" maxlength="15" title="Nombre con el que se identificara, de 3 a 15 letras." required> 
+      <label for="Password" class="sr-only">Password</label>
+      <input Style="display:none;" type="password" name="p" id="Password" class="form-control" placeholder="Password" required pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,40}" minlength="8" maxlength="40" title="La contraseña necesita de 8 y 40 caracteres y debe incluir minusculas,mayusculas y numeros." required>
+      <div class="checkbox mb-3">
+        <label Style="display:none;" id="Accept">
+          <input type="checkbox" value="true" required> Acepto las condiciones de uso
+        </label>
+      </div>    
+    </form>
+    <div class="box-button-register">
+    
+    <button Style="display:none;" id="Register-button" class="btn btn-lg btn-primary btn-block button-register" type="buttom" >Registrarte</button>
+    <button Style="display:none;" id="Login-button" class="btn btn-lg btn-primary btn-block button-login" type="buttom" >Entrar</button>
+    <button Style="display:none;" id="Go" class="btn btn-lg btn-primary btn-block button-go" type="buttom" >Ver datos</button>
+    <button Style="display:none;" id="Salir" class="btn btn-lg btn-primary btn-block button-logout" type="buttom" >Salir</button>
     </div>
- 
-    <script type="text/javascript" src="cordova.js"></script>
-    <!-- Path to Framework7 Library JS-->
-    <script type="text/javascript" src="js/framework7.min.js"></script>
-    <!-- Path to your app js-->
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
-	<script type="text/javascript" src="js/render.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDd2CCs4LVF1IJHqIUsbdC11KmDt--PaNo"></script>
-</body>
+     <div>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+</div>
+</div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+        <script type="text/javascript" src="js/setfirebase.js"></script>
+        <script type="text/javascript" src="js/fireauth.js"></script>
+    </body>
 </html>

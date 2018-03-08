@@ -275,6 +275,14 @@ module.exports = [
         "merges": [
             "window.FileSystem"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-firebase/www/firebase-browser.js",
+        "id": "cordova-plugin-firebase.FirebasePlugin",
+        "pluginId": "cordova-plugin-firebase",
+        "clobbers": [
+            "FirebasePlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -288,7 +296,8 @@ module.exports.metadata =
     "cordova-plugin-x-toast": "2.6.0",
     "cordova-plugin-geolocation": "4.0.1",
     "cordova-plugin-flashlight": "3.2.0",
-    "cordova-plugin-file": "6.0.1"
+    "cordova-plugin-file": "6.0.1",
+    "cordova-plugin-firebase": "0.1.25"
 }
 // BOTTOM OF METADATA
 });

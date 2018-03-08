@@ -1,118 +1,113 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\FPE\\appmovil\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\FPE\\appmovil\\platforms\\android\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "4,2,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "158,55,99",
-                        "endColumns": "63,43,58",
-                        "endOffsets": "217,94,153"
-                    },
-                    "to": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,119,163",
-                        "endColumns": "63,43,58",
-                        "endOffsets": "114,158,217"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\FPE\\Documents\\Appmovil\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\FPE\\Documents\\Appmovil\\platforms\\android\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "4,2,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "158,55,99",
-                        "endColumns": "63,43,58",
-                        "endOffsets": "217,94,153"
-                    },
-                    "to": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,119,163",
-                        "endColumns": "63,43,58",
-                        "endOffsets": "114,158,217"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "F:\\Appmovil\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrador.EVA-70\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-9.0.0.aar\\fedea78f1558dfb259879a7a672815b5\\res\\values\\values.xml",
+                    "source": "C:\\Users\\Administrador.EVA-70\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-tagmanager-11.8.0.aar\\0799f6baa0fac96ad406066040ada5c4\\res\\values\\values.xml",
                     "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "261,322,412,492,582,672,752,833,913,993,1081,1159,1247,1335,1413,1492,1570,2214,2446,2572,2753,2878,3002,3215,3430,3553,3718,3812,3953,4043,4146,4297,4419,4562,4662,4813,4905,5124,5219,5324,5505,5630,5805,5910,6058,6121,6183",
-                        "endColumns": "60,89,79,89,89,79,80,79,79,87,77,87,87,77,78,77,77,231,125,180,124,123,212,214,122,164,93,140,89,102,150,121,142,99,150,91,218,94,104,180,124,174,104,147,62,61,78",
-                        "endOffsets": "317,407,487,577,667,747,828,908,988,1076,1154,1242,1330,1408,1487,1565,1643,2441,2567,2748,2873,2997,3210,3425,3548,3713,3807,3948,4038,4141,4292,4414,4557,4657,4808,4900,5119,5214,5319,5500,5625,5800,5905,6053,6116,6178,6257"
+                        "startLines": "-1,-1,-1",
+                        "startColumns": "-1,-1,-1",
+                        "startOffsets": "-1,-1,-1"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,44,45,46,47,48,49,50,51,52,53,54",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,166,256,336,426,516,596,677,757,837,925,1003,1091,1179,1257,1336,1414,2393,2625,2751,2932,3057,3181,3394,3609,3732,3897,3991,4132,4222,4325,4476,4598,4741,4841,4992,5303,5522,5617,5722,5903,6028,6203,6308,6456,6519,6581",
-                        "endColumns": "60,89,79,89,89,79,80,79,79,87,77,87,87,77,78,77,77,231,125,180,124,123,212,214,122,164,93,140,89,102,150,121,142,99,150,91,218,94,104,180,124,174,104,147,62,61,78",
-                        "endOffsets": "161,251,331,421,511,591,672,752,832,920,998,1086,1174,1252,1331,1409,1487,2620,2746,2927,3052,3176,3389,3604,3727,3892,3986,4127,4217,4320,4471,4593,4736,4836,4987,5079,5517,5612,5717,5898,6023,6198,6303,6451,6514,6576,6655"
+                        "startLines": "62,63,64",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "4504,4574,4658",
+                        "endColumns": "69,83,67",
+                        "endOffsets": "4569,4653,4721"
                     }
                 },
                 {
-                    "source": "F:\\Appmovil\\platforms\\android\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "source": "C:\\Users\\Administrador.EVA-70\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-crash-11.8.0.aar\\8e256034d06421047babe65e14f5dfb4\\res\\values\\values.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,200,311,394,498,602,722,822",
-                        "endColumns": "144,110,82,103,103,119,99,76",
-                        "endOffsets": "195,306,389,493,597,717,817,894"
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
                     },
                     "to": {
-                        "startLines": "55,56,57,58,59,60,61,63",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "6660,6805,6916,6999,7103,7207,7327,7486",
-                        "endColumns": "144,110,82,103,103,119,99,76",
-                        "endOffsets": "6800,6911,6994,7098,7202,7322,7422,7558"
+                        "startLines": "36",
+                        "startColumns": "4",
+                        "startOffsets": "1635",
+                        "endColumns": "52",
+                        "endOffsets": "1683"
                     }
                 },
                 {
                     "source": "F:\\Appmovil\\platforms\\android\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "4,2,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "158,55,99",
-                        "endColumns": "63,43,58",
-                        "endOffsets": "217,94,153"
+                        "startLines": "-1,-1,6,5,-1",
+                        "startColumns": "-1,-1,4,4,-1",
+                        "startOffsets": "-1,-1,305,222,-1",
+                        "endColumns": "-1,-1,82,82,-1",
+                        "endOffsets": "-1,-1,383,300,-1"
                     },
                     "to": {
-                        "startLines": "22,23,62",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "2285,2349,7427",
-                        "endColumns": "63,43,58",
-                        "endOffsets": "2344,2388,7481"
+                        "startLines": "38,39,59,60,61",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "1756,1820,4279,4362,4445",
+                        "endColumns": "63,43,82,82,58",
+                        "endOffsets": "1815,1859,4357,4440,4499"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Administrador.EVA-70\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-9.0.0.aar\\b0f05ea5677e79fb2ba3ebe6c61305c3\\res\\values\\values.xml",
+                    "source": "F:\\Appmovil\\platforms\\android\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
-                        "startLines": "5,8",
-                        "startColumns": "4,4",
-                        "startOffsets": "633,859",
-                        "endColumns": "66,218",
-                        "endOffsets": "695,1073"
+                        "startLines": "-1,-1,-1",
+                        "startColumns": "-1,-1,-1",
+                        "startOffsets": "-1,-1,-1"
                     },
                     "to": {
-                        "startLines": "21,43",
+                        "startLines": "2,11,12",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "105,819,863",
+                        "endColumns": "42,43,48",
+                        "endOffsets": "143,858,907"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Administrador.EVA-70\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\61b20ab90b713bd670feef232aff2ba0\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1,-1",
+                        "startColumns": "-1,-1",
+                        "startOffsets": "-1,-1"
+                    },
+                    "to": {
+                        "startLines": "37,48",
                         "startColumns": "4,4",
-                        "startOffsets": "2218,5084",
-                        "endColumns": "66,218",
-                        "endOffsets": "2280,5298"
+                        "startOffsets": "1688,2904",
+                        "endColumns": "67,166",
+                        "endOffsets": "1751,3066"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Administrador.EVA-70\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\4c8b7935bf5242c64947eea449e07dac\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10,40,41,42,43,44,45,46,47,49,50,51,52,53,54,55,56,57",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "148,238,318,408,498,578,659,739,1864,1969,2150,2275,2382,2562,2685,2801,3071,3259,3364,3545,3670,3845,3993,4056,4118",
+                        "endColumns": "89,79,89,89,79,80,79,79,104,180,124,106,179,122,115,102,187,104,180,124,174,147,62,61,78",
+                        "endOffsets": "233,313,403,493,573,654,734,814,1964,2145,2270,2377,2557,2680,2796,2899,3254,3359,3540,3665,3840,3988,4051,4113,4192"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Administrador.EVA-70\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\5e70bee9d7e46001c60197a4f373e75c\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
+                    },
+                    "to": {
+                        "startLines": "58",
+                        "startColumns": "4",
+                        "startOffsets": "4197",
+                        "endColumns": "81",
+                        "endOffsets": "4274"
                     }
                 }
             ]

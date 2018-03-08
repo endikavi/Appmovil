@@ -33,6 +33,9 @@
     },
     "cordova-plugin-file": {
       "PACKAGE_NAME": "io.cordova.miapp"
+    },
+    "cordova-plugin-firebase": {
+      "PACKAGE_NAME": "io.cordova.miapp"
     }
   },
   "dependent_plugins": {}
