@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1014982577939",
+    "firebase_url": "https://movil-app-endika.firebaseio.com",
+    "project_id": "movil-app-endika",
+    "storage_bucket": "movil-app-endika.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014982577939:android:cd51991e707b4453",
+        "android_client_info": {
+          "package_name": "io.cordova.miapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014982577939-0i61grdnt1fl6ttd20452nmr7226a6e7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgifhVH1cbzwYME0in5Dag6w82s79BuN0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
