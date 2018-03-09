@@ -17,22 +17,24 @@ var gameMap = [
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 1, 1, 1, 0, 2, 2, 2, 2, 0,
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 0, 2, 2, 2, 2, 0,
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
-	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 0, 0, 0, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 1, 0, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 0, 0, 0, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+    0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 ];
 var mapTileData = new TileMap();
 
 var roofList = [
-	{ x:5, y:3, w:4, h:7, data: [
-		10, 10, 11, 11,
-		10, 10, 11, 11,
-		10, 10, 11, 11,
-		10, 10, 11, 11,
-		10, 10, 11, 11,
-		10, 10, 11, 11,
-		10, 10, 11, 11
+	{ x:5, y:2, w:5, h:8, data: [
+		10, 10, 11, 11, 11,
+		10, 10, 11, 11, 11,
+		10, 10, 11, 11, 11,
+		10, 10, 11, 11, 11,
+		10, 10, 11, 11, 11,
+		10, 10, 11, 11, 11,
+		10, 10, 11, 11, 11,
+        10, 10, 11, 11, 11
 	]},
 	{ x:15, y:5, w:5, h:4, data: [
 		10, 10, 11, 11, 11,
@@ -52,14 +54,14 @@ var roofList = [
 ];
 
 var tileW = 40, tileH = 40;
-var mapW = 20, mapH = 20;
+var mapW = 20, mapH = 21;
 var currentSecond = 0, frameCount = 0, framesLastSecond = 0, lastFrameTime = 0;
 
 var tileset = null, tilesetURL = "tileset.png", tilesetLoaded = false;
 
 var gameTime = 0;
 var gameSpeeds = [
-	{name:"Normal", mult:1},
+	{name:"Normal", mult:4},
 	{name:"Slow", mult:0.3},
 	{name:"Fast", mult:3},
 	{name:"Paused", mult:0}
@@ -425,7 +427,7 @@ function Character()
 	this.sprites[directions.down]	= new Sprite([{x:0,y:180,w:30,h:30}]);
 	this.sprites[directions.left]	= new Sprite([{x:0,y:210,w:30,h:30}]);
 	
-	this.inventory = new Inventory(3);
+	this.inventory = new Inventory(4);
 }
 Character.prototype.placeAt = function(x, y)
 {
@@ -584,8 +586,7 @@ window.onload = function()
 		if(e.keyCode==80) { keysDown[e.keyCode] = false; }
 	});
 
-	viewport.screen = [document.getElementById('game').width,
-		document.getElementById('game').height];
+	viewport.screen = [600,600];
 
 	tileset = new Image();
 	tileset.onerror = function()
@@ -602,7 +603,7 @@ window.onload = function()
 		{ console.log("Entered tile 2,2"); };
 	
 	var mo1 = new MapObject(1); mo1.placeAt(2, 4);
-	var mo2 = new MapObject(2); mo2.placeAt(2, 3);
+	var mo2 = new MapObject(2); mo2.placeAt(2, 2);
 	
 	var mo11 = new MapObject(1); mo11.placeAt(6, 4);
 	var mo12 = new MapObject(2); mo12.placeAt(7, 4);
