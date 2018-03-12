@@ -1,4 +1,32 @@
 
+document.getElementById("up").addEventListener("mouseover",upsi);
+document.getElementById("up").addEventListener("mouseout",upno);
+
+function upsi(){keysDown[38] = true;}
+function upno(){keysDown[38] = false;}
+
+document.getElementById("down").addEventListener("mouseover",downsi);
+document.getElementById("down").addEventListener("mouseout",downno);
+function downsi(){keysDown[40] = true;}
+function downno(){keysDown[40] = false;}
+
+document.getElementById("left").addEventListener("mouseover",leftsi);
+document.getElementById("left").addEventListener("mouseout",leftno);
+function leftsi(){keysDown[37] = true;}
+function leftno(){keysDown[37] = false;}
+
+document.getElementById("right").addEventListener("mouseover",rightsi);
+document.getElementById("right").addEventListener("mouseout",rightno);
+function rightsi(){keysDown[39] = true;}
+function rightno(){keysDown[39] = false;}
+
+document.getElementById("action").addEventListener("mouseover",actionsi);
+document.getElementById("action").addEventListener("mouseout",actionno);
+function actionsi(){keysDown[80] = true;}
+function actionno(){keysDown[80] = false;}
+
+
+
 var ctx = null;
 var r = Math.round(Math.random()*4);
 var gameMap = [
@@ -16,11 +44,11 @@ var gameMap = [
 	0, 1, 1, 2, 2, 2, 2, 2, 2, 1, 4, 4, 1, 1, 0, 2, 2, 2, 2, 0,
 	0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 1, 1, 1, 0, 2, 2, 2, 2, 0,
-	0, 1, r, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 0, 2, 2, 2, 2, 0,
+	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 0, 2, 2, 2, 2, 0,
 	0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
-	0, 1, r, 0, 0, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 0, r, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
 	0, 1, 1, 1, 0, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-	0, 1, r, 0, 0, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
+	0, 1, 1, 0, 0, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 ];
@@ -485,7 +513,6 @@ Character.prototype.processMovement = function(t)
 		this.position[0] = Math.round(this.position[0]);
 		this.position[1] = Math.round(this.position[1]);
 	}
-
 	return true;
 }
 Character.prototype.canMoveTo = function(x, y)
@@ -587,7 +614,7 @@ window.onload = function()
 		if(e.keyCode==80) { keysDown[e.keyCode] = false; }
 	});
 
-	viewport.screen = [600,600];
+	viewport.screen = [800,450];
 
 	tileset = new Image();
 	tileset.onerror = function()
@@ -729,7 +756,7 @@ function drawGame()
 	for(var i = 0; i < player.inventory.spaces; i++)
 	{
 		ctx.fillStyle = "#ddccaa";
-		ctx.fillRect(10 + (i * 50), 550,
+		ctx.fillRect(570 + (i * 50), 30,
 			40, 40);
 		
 		if(typeof player.inventory.stacks[i]!='undefined')
@@ -737,15 +764,15 @@ function drawGame()
 			var it = itemTypes[player.inventory.stacks[i].type];
 			
 			it.sprite.draw(gameTime,
-				10 + (i * 50) + it.offset[0],
-				350 + it.offset[1]);
+				570 + (i * 50) + it.offset[0],
+				30 + it.offset[1]);
 			
 			if(player.inventory.stacks[i].qty>1)
 			{
 				ctx.fillStyle = "#000000";
 				ctx.fillText("" + player.inventory.stacks[i].qty,
-					10 + (i*50) + 38,
-					350 + 38);
+					570 + (i*50) + 38,
+					30 + 38);
 			}
 		}
 	}
@@ -754,6 +781,7 @@ function drawGame()
 	ctx.fillStyle = "#ff0000";
 	ctx.fillText("FPS: " + framesLastSecond, 10, 20);
 	ctx.fillText("Game speed: " + gameSpeeds[currentSpeed].name, 10, 40);
+	ctx.fillText(player.tileFrom[0] +'  '+ player.tileFrom[1], 10, 60);
 
 	lastFrameTime = currentFrameTime;
 	requestAnimationFrame(drawGame);
