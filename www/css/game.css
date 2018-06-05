@@ -1,0 +1,227 @@
+*{margin:0px; padding:0px;}
+
+@font-face {
+    font-family: MyFont;
+    src: url("../fonts/Roboto-Black.ttf") format("opentype");
+}
+
+#screen{
+width:100%;margin:0px; padding:0px; height: 100%; overflow:inherit;position: relative;background-color: aliceblue;
+}
+
+
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%;
+        transform: rotate(-120deg);
+	}
+	50% {
+		background-position: 100% 50%;
+        transform: rotate(120deg);
+	}
+	100% {
+		background-position: 0% 50%;
+        transform: rotate(-120deg);
+	}
+}
+.pruebagradiente {animation: Gradient 5s ease infinite;} 
+
+
+	#layer3 { position: absolute; width:100%; height: 100%; margin:0px; padding:0px; overflow:inherit; z-index: 4 }
+  	#layer2 { position: absolute; width:100%; height: 100%; margin:0px; padding:0px; overflow:inherit; z-index: 3 }
+  	#layer1 { position: absolute; width:100%; height: 100%; margin:0px; padding:0px; overflow:inherit; z-index: 2 }
+  	#layer0 { position: absolute; width:100%; height: 100%; margin:0px; padding:0px; overflow:inherit; z-index: 1 }
+
+body,html{
+    overflow:hidden;
+    background-color: rgba(0, 0, 0, 1);
+	height: 100%;
+    margin-top:auto;
+}
+
+@keyframes image_blur {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+#msg-box{
+    
+    
+    background-image: url("msgbox.png");
+	background-size: 100%;
+    position: absolute; width:100%;height:33%; margin:0px; padding:0px; overflow:inherit; z-index: 5;
+    bottom: 0;
+	border-color:  rgba(125, 75, 50, 1);
+	border-top-width:2px;
+	border-top-style:groove;
+    
+}
+#msg-title{
+	
+    margin:0px; padding:0px; overflow:inherit; z-index: 5;text-transform:capitalize;
+    
+}
+#msg-text{
+	
+   margin:0px; margin-left:5px; padding:0px; overflow:inherit; z-index: 5;text-transform:none;
+	font-family: Myfont;
+    
+}
+#msg-letter{
+	
+	-webkit-animation: image_blur 0.4s;
+	
+}
+#msg-text-box{
+	
+	position: absolute;
+    margin:0px; padding:0px; overflow:inherit; z-index: 5;
+	width: 70%;
+	top: 7%;
+	left: 20.5%;
+    
+}
+#msg-img{
+	
+    position: absolute;height:65%; margin:0px; padding:0px; overflow:inherit; z-index: 5;
+    bottom: 22%;
+	left: 3.5%;
+    
+}
+
+.container {
+  width: 15%;
+  height:0px;
+  position: absolute;
+  display: inline;
+    
+}
+.circle-action {
+    border-radius: 0%;
+    width: 100%;
+    padding-bottom: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: 100%;
+    transform: rotate(-45deg);
+    background-image: url("hand.png");
+	position: absolute;
+    z-index: 5;
+	
+}
+
+.circle {
+
+    border-radius: 0%;
+    width: 100%;
+    padding-bottom: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: 100%;
+    transform: rotate(-45deg);
+	background-image: url("arrows.png");
+	z-index: 5;
+	
+}
+
+.circley {
+	position: absolute;
+    z-index: 5;
+    border-radius: 0%;
+    width: 50%;
+	height: 100%;
+    padding-bottom: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: 10%;
+	
+}
+
+.left {
+		
+	top:65.5%;
+	left:3.5%;
+    transform: rotate(180deg);
+    z-index: 5;
+		
+}
+
+#lefty {
+	
+	background: transparent;
+    border: none !important;
+    font-size:0;
+	
+}
+
+.styck {
+	
+	position: absolute;
+    z-index: 5;
+	top:0%;
+	left:0%;
+	width: 100%;
+	height: 100%;
+		
+}
+.action-box {
+	
+	position: absolute;
+    z-index: 5;
+	top:0%;
+	right:0%;
+	width: 50%;
+	height: 100%;
+		
+}
+
+.right {
+	
+	background: transparent;
+    border: none !important;
+    font-size:0;
+	top:39%;
+	left:25%;
+    z-index: 5;
+	
+}
+
+.up {
+	
+	background: transparent;
+    border: none !important;
+    font-size:0;
+	transform: rotate(270deg);	
+	top:33.4%;
+	left:6.7%;
+    z-index: 5;
+}
+
+.down {
+	
+	background: transparent;
+    border: none !important;
+    font-size:0;
+	transform: rotate(90deg);	
+	top:71%;
+	left:21.7%;
+	z-index: 5;
+}
+	
+.action {
+	
+	background: transparent;
+    border: none !important;
+    font-size:0;
+	position: absolute;
+    z-index: 5;
+	top:60%;
+	right:10%;	
+}
+.bgimg{
+width:100%;margin:0px; padding:0px; height: 100%;position: absolute;z-index: 0;
+}

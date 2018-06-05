@@ -1,5 +1,3 @@
-document.getElementById("Register-button").addEventListener("click",signIn)
-
 function signIn(){
     
     var email = document.getElementById('Email').value;
@@ -17,8 +15,6 @@ function signIn(){
         console.log(error);
     });
 }
-
-document.getElementById("Login-button").addEventListener("click",logIn)
 
 function logIn(){
     
@@ -48,28 +44,27 @@ function logIn(){
         })
 }
 
-document.getElementById("Google").addEventListener("click",logInGoogle)
-
 function logInGoogle(){
-    
+    console.log("hola");
      var provider = new firebase.auth.GoogleAuthProvider(); 
         
-        firebase.auth().signInWithPopup(provider).then(function(result) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-    // ...
-       
+        firebase.auth().getRedirectResult().then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            // ...
+            console.log("funciona");
         }).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+            console.log(error);
         });
     
 }
@@ -102,87 +97,19 @@ firebase.auth().sendPasswordResetEmail(email).then(function() {
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
+	console.log('Usuario conectado');
     console.log(user);
-    viewUserData();
+	console.log(user.uid)
+	console.log(user.displayName)
+	
   } else {
     // User is signed out.
     console.log('Usuario desconectado');
-    viewReset();
   }
 });
 
-document.getElementById("Salir").addEventListener("click",logOut)
 
 function logOut(){
 firebase.auth().signOut(); 
-}
-
-document.getElementById("Register").addEventListener("click",viewRegisterForm)
-
-function viewRegisterForm(){
-    document.getElementById('Titulo').style.display = 'none';
-    document.getElementById('Reset').style.display = 'block';
-    document.getElementById('Email').style.display = 'block';
-    document.getElementById('Password').style.display = 'block';
-    document.getElementById('Username').style.display = 'block';
-    document.getElementById('Accept').style.display = 'block';
-    document.getElementById('Login-button').style.display = 'none';
-    document.getElementById('Register-button').style.display = 'block';
-    document.getElementById('Register').style.display = 'none';
-    document.getElementById('Login').style.display = 'none';
-    document.getElementById('Google').style.display = 'none';
-    document.getElementById('Salir').style.display = 'none';
-    document.getElementById('Go').style.display = 'none';
-}
-
-document.getElementById("Login").addEventListener("click",viewLoginForm)
-
-function viewLoginForm(){
-    document.getElementById('Titulo').style.display = 'none';
-    document.getElementById('Reset').style.display = 'block';
-    document.getElementById('Password').style.display = 'block';
-    document.getElementById('Username').style.display = 'none';
-    document.getElementById('Email').style.display = 'block';
-    document.getElementById('Accept').style.display = 'none';
-    document.getElementById('Login-button').style.display = 'block';
-    document.getElementById('Register').style.display = 'none';
-    document.getElementById('Login').style.display = 'none';
-    document.getElementById('Google').style.display = 'none';
-    document.getElementById('Salir').style.display = 'none';
-    document.getElementById('Go').style.display = 'none';
-}
-
-document.getElementById("Reset").addEventListener("click",viewReset)
-
-function viewReset(){
-    document.getElementById('Titulo').style.display = 'block';
-    document.getElementById('Reset').style.display = 'none';
-    document.getElementById('Email').style.display = 'none';
-    document.getElementById('Password').style.display = 'none';
-    document.getElementById('Username').style.display = 'none';
-    document.getElementById('Accept').style.display = 'none';
-    document.getElementById('Register-button').style.display = 'none';
-    document.getElementById('Login-button').style.display = 'none';
-    document.getElementById('Register').style.display = 'block';
-    document.getElementById('Login').style.display = 'block';
-    document.getElementById('Google').style.display = 'block';
-    document.getElementById('Salir').style.display = 'none';
-    document.getElementById('Go').style.display = 'none';
-}
-
-function viewUserData(){
-    document.getElementById('Titulo').style.display = 'none';
-    document.getElementById('Reset').style.display = 'none';
-    document.getElementById('Email').style.display = 'none';
-    document.getElementById('Password').style.display = 'none';
-    document.getElementById('Username').style.display = 'none';
-    document.getElementById('Accept').style.display = 'none';
-    document.getElementById('Register-button').style.display = 'none';
-    document.getElementById('Login-button').style.display = 'none';
-    document.getElementById('Register').style.display = 'none';
-    document.getElementById('Login').style.display = 'none';
-    document.getElementById('Google').style.display = 'none';
-    document.getElementById('Salir').style.display = 'block';
-    document.getElementById('Go').style.display = 'block';
 }
 
